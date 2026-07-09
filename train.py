@@ -1,23 +1,28 @@
 import torch 
 import torch.nn as nn 
 
+
 import torch.optim as optim 
+
 
 from utils.model import *
 from utils.load import * 
+
 
 model  = CNN()
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(CNN.parameters() , lr = 0.001)
 
+
 device = torch.device("cuda")
+
 
 epochs = 10 
 
 for epoch in range(epochs):
     loss_per_epoch = 0.0 
-    for img , labels in traindata:
+    for img , labels in train_dataloader:
         
         optimizer.zero_grad() 
 
@@ -30,7 +35,7 @@ for epoch in range(epochs):
         optimizer.step()
 
         loss_per_epoch += loss 
-    print(f" {epoch + 1} / {epochs}  loss = {loss_per_epoch / len(traindata)} ")
+    print(f" {epoch + 1} / {epochs}  loss = {loss_per_epoch / len(train_dataloader)} ")
 
 try : 
     torch.save(
