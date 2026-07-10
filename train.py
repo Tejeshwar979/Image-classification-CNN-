@@ -13,7 +13,7 @@ optimizer = optim.Adam(model.parameters() , lr = 0.001)
 
 device = torch.device("cuda")
 
-epochs = 2 
+epochs = 100
 
 try : 
 # training the model  
@@ -38,7 +38,7 @@ try :
     try : 
         torch.save(
             model.state_dict() , 
-            f"saved_model_1.pth" , 
+            f"CNN_base_model.pth" , 
         )
     except Exception as e : 
         print(e)
