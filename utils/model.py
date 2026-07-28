@@ -32,13 +32,12 @@ class CNN(nn.Module) :
             nn.Conv2d(512 , 1024 , 3 , 1 , 1),
             nn.ReLU(),
             nn.MaxPool2d(2 , 2),
-
         ) 
         self.fc_layer = nn.Sequential(
             nn.Linear(4 * 4 * 1024 , 256), 
             nn.ReLU() , 
             nn.Linear(256 , 2)
-        )
+        )  
     def forward(self , x):
         x = self.model(x) 
         x = x.view(x.shape[0] ,-1)

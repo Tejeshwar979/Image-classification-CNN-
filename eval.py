@@ -1,12 +1,11 @@
 from utils.load import *  
 from utils.model import *  
-
-model = CNN() 
+from utils.VGGmodel import * 
+model = VGG() 
 
 try:
-    model.load_state_dict(torch.load("CNN_base_model.pth"))
-    print("loaded")
- 
+    model.load_state_dict(torch.load("VGG_base_model.pth"))
+
     ct = 0 
     size = 0 
     for img , lable in test_dataloader : 

@@ -22,11 +22,13 @@ try:
 
     test_dataset = ImageFolder(root = r"D:\CNN\pneumonai-images\chest_xray\test"  , transform = transform)
 
-    train_dataloader = DataLoader(train_dataset , shuffle = True , batch_size = 16)
-    test_dataloader = DataLoader(test_dataset , shuffle = True , batch_size = 16) 
+    train_dataloader = DataLoader(train_dataset , shuffle = True , batch_size = 6)
+    test_dataloader = DataLoader(test_dataset , shuffle = True , batch_size = 6) 
 
 except Exception as e : 
        print("exception" , e)
 
 
 print("loaded")
+
+
