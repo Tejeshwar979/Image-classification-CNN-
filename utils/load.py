@@ -8,7 +8,6 @@ from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder 
 
 
-
 transform = transforms.Compose([
 
     transforms.Resize((256 , 256)) , 
@@ -28,7 +27,5 @@ try:
 except Exception as e : 
        print("exception" , e)
 
-
-print("loaded")
 
 

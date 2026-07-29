@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn  
 
 
+
 class VGG(nn.Module): 
     def __init__(self):
         super().__init__()
@@ -51,14 +52,14 @@ class VGG(nn.Module):
             nn.Conv2d(512 , 512 , 3 , 1, 1),
             nn.ReLU(),
             nn.MaxPool2d(2 , 2),
-            ) 
+        ) 
         self.fc_layers = nn.Sequential(
             nn.Linear(8 * 8 * 512 , 4096) , 
             nn.ReLU(),
             nn.Linear(4096 , 1000),
             nn.ReLU(),
             nn.Linear(1000 , 2) 
-        ) 
+        )  
     def forward(self , x) : 
         x = self.first_convlayers(x) 
         x = self.second_convlayers(x)

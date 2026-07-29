@@ -1,11 +1,11 @@
 from utils.load import *  
 from utils.model import *  
-from utils.VGGmodel import * 
+from utils.ResNet import * 
 
-model = VGG() 
+model = ResNet18() 
 
 try:
-    model.load_state_dict(torch.load("VGG_base_model.pth"))
+    model.load_state_dict(torch.load("ResNet_epoch20_model.pth"))
 
     ct = 0 
     size = 0 
